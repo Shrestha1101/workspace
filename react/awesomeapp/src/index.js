@@ -94,3 +94,59 @@
 //   </>, 
 //   document.getElementById('root')
 // );//class is already reserve in react so for css we use className.
+  
+
+// Inline CSS:
+// import React from 'react';
+// import ReactDom from 'react-dom';
+// import "./index.css";
+
+// const img1='https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg';
+// const img2='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLkKGGGC11R_c1hI49CE5YWXya-ctkH3JDQqIGcxSK&s';
+
+// const heading={
+//   color: 'green',
+//   textTransform: 'capitalize'
+// };
+
+// ReactDom.render(<>
+//   <h1 style= {{color: 'green',textTransform: 'capitalize'}}>
+//    in this we import css files in react</h1> //instead of this we simply pass object name like heading.
+//   <div ClassName="img_div">
+//   < img src ={img1} alt="randompictures" /> 
+//   < img src ={img2} alt="randompictures" />
+//   </div> 
+//   </>, 
+//   document.getElementById('root')
+// );
+
+
+//3 Challenge:
+import React from 'react';
+import ReactDom from 'react-dom';
+import "./index.css";
+
+let currTime= new Date(2020, 8,2,15);
+currTime= currTime.getHours();
+let greeting='';
+const cssStyle={};
+const heading ={
+  textAlign: 'center'
+};
+
+if (currTime >=1 && currTime <12 ){
+  greeting='Good Morning';
+  cssStyle.color= 'green';
+}else if(currTime>=12 && currTime <19){
+  greeting='Good AfterNoon';
+  cssStyle.color= 'orange';
+} else {
+  greeting='Good Night';
+  cssStyle.color= 'black';
+}
+
+ReactDom.render(<>
+<div>
+<h1 style={heading}>Hello Sir,<span style={cssStyle}>{greeting} </span></h1></div></>,
+ document.getElementById('root'));
+
