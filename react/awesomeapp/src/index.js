@@ -122,31 +122,123 @@
 
 
 //3 Challenge:
+// import React from 'react';
+// import ReactDom from 'react-dom';
+// import "./index.css";
+
+// let currTime= new Date(2020, 8,2,15);
+// currTime= currTime.getHours();
+// let greeting='';
+// const cssStyle={};
+// const heading ={
+//   textAlign: 'center'
+// };
+
+// if (currTime >=1 && currTime <12 ){
+//   greeting='Good Morning';
+//   cssStyle.color= 'green';
+// }else if(currTime>=12 && currTime <19){
+//   greeting='Good AfterNoon';
+//   cssStyle.color= 'orange';
+// } else {
+//   greeting='Good Night';
+//   cssStyle.color= 'black';
+// }
+
+// ReactDom.render(<>
+// <div>
+// <h1 style={heading}>Hello Sir,<span style={cssStyle}>{greeting} </span></h1></div></>,
+//  document.getElementById('root'));
+
+
+//React Component:
+// import React from 'react';
+// import ReactDom from 'react-dom';
+// import Heading from "./Heading";
+// import Para from "./Para";
+// import Ordlist from './Ordlist';
+
+// ReactDom.render(<>
+//   <Heading />
+//   <Para />
+//   <Ordlist /> </> ,document.getElementById('root'));
+
+// //master component:
+// import React from 'react';
+// import ReactDom from 'react-dom';
+// import App from "./App";
+
+// ReactDom.render(<App /> ,document.getElementById('root'));
+
+
+//challenge 3 with component:
+// import React from 'react';
+// import ReactDom from 'react-dom';
+// import "./index.css";
+// import Master from "./Master";
+
+//  ReactDom.render(<Master />,document.getElementById('root'));
+
+
+//challenge 5:
+// import React from 'react';
+// import ReactDom from 'react-dom';
+// import Master1 from './Master1';
+// // import Add, {Sub, Mult, Div} from "./Calcuator";
+
+// ReactDom.render(<Master1 /> , document.getElementById('root'));
+
+//Netflix App Project 1:
 import React from 'react';
 import ReactDom from 'react-dom';
+import Card from "./Card";
 import "./index.css";
+import Data from './Data';
 
-let currTime= new Date(2020, 8,2,15);
-currTime= currTime.getHours();
-let greeting='';
-const cssStyle={};
-const heading ={
-  textAlign: 'center'
-};
-
-if (currTime >=1 && currTime <12 ){
-  greeting='Good Morning';
-  cssStyle.color= 'green';
-}else if(currTime>=12 && currTime <19){
-  greeting='Good AfterNoon';
-  cssStyle.color= 'orange';
-} else {
-  greeting='Good Night';
-  cssStyle.color= 'black';
+// ek sath sare card ko access karne ke liye ek fuctiom use kia map aur usme hi val pass kar diya
+function ncard(val){
+   return (
+      <Card 
+   imgsrc={val.imgsrc} 
+   title={val.title}
+    sname={val.sname}
+    link={val.link}
+   />
+   );
 }
 
 ReactDom.render(<>
-<div>
-<h1 style={heading}>Hello Sir,<span style={cssStyle}>{greeting} </span></h1></div></>,
- document.getElementById('root'));
 
+   <h1 className='heading_style'> List of 5 top Netflix Series </h1>
+   {/* <Card 
+   imgsrc={Data[0].imgsrc} 
+   title={Data[0].title}
+    sname={Data[0].sname}
+    link={Data[0].link}
+   />
+   <Card 
+   imgsrc={Data[1].imgsrc} 
+   title={Data[1].title}
+    sname={Data[1].sname}
+    link={Data[1].link}
+    />
+   <Card 
+   imgsrc={Data[2].imgsrc} 
+   title={Data[2].title}
+    sname={Data[2].sname}
+    link={Data[2].link}
+    />
+    <Card 
+   imgsrc={Data[3].imgsrc} 
+   title={Data[3].title}
+    sname={Data[3].sname}
+    link={Data[3].link}
+    />
+    <Card 
+   imgsrc={Data[4].imgsrc} 
+   title={Data[4].title}
+    sname={Data[4].sname}
+    link={Data[4].link}
+    /> */}
+    {Data.map(ncard)}
+   </> ,document.getElementById('root'));
