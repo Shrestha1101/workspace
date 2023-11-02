@@ -245,9 +245,17 @@
 
 
 //slot machine:
+// import React from 'react';
+// import ReactDom from 'react-dom';
+// import Game from './Game';
+// import "./index.css";
+
+// ReactDom.render(<Game />, document.getElementById('root'));
+
+//React Hooks:
 import React from 'react';
 import ReactDom from 'react-dom';
-import Game from './Game';
 import "./index.css";
+import Hooks from "./Hooks";
 
-ReactDom.render(<Game />, document.getElementById('root'));
+ReactDom.render(<Hooks /> ,document.getElementById('root'));

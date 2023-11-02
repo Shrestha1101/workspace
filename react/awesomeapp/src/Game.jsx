@@ -44,11 +44,21 @@
 // export default App;
 
 import React from "react";
+import "./index.css";
 
-const Sgame = () => {
-let x = '😄' ;
-let y ='😃';
-let z= '😃';
+const Sgame = (props) => {
+// let x = '😃' ;
+// let y ='😃';
+// let z='😃';
+
+
+//object destruction
+// let x=props.x;
+// let y=props.y;
+// let z=props.z;//instead of this we write below one
+ let {x,y,z} =props;
+
+;
 
 if ((x===y) && (y===z)){
   return (
@@ -63,17 +73,30 @@ if ((x===y) && (y===z)){
   </>
   );
 }else {
-  return (
-    <h1> not matching.</h1>
+  return (<>
+  <div className='Slot_inner'> 
+  <h1> 
+     {x} {y} {z} 
+  </h1>
+  <h1> This is not matching. </h1>
+  <hr />
+</div>
+</>
   );
 }
 };
 
 const Game = () => {
   return (<>
-    <h1 className='heading_style'> Welcome to <span style = {{fontWeight:'bold'}}> Slot Machine Game </span>
+    <h1 className='heading_style'> 🎰 Welcome to <span style = {{fontWeight:'bold'}}> Slot Machine Game 🎰</span>
     </h1>
-    <Sgame />
+    <div classNmae='Slotmachine'>
+    <Sgame x= '❤️' y='❤️' z='❤️' />
+    <Sgame x= '😃' y='😃' z= '😠' />
+    <Sgame x= '🥰' y='🥰' z='🥰' />
+    <Sgame x= '🍌' y='🥭' z='🍌' />
+
+    </div>
   </> 
   );
   };
